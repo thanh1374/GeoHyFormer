@@ -1,60 +1,90 @@
-# GeoHyFormer: Geometric Hybrid Transformer for Fake News Detection
+# 🌐 GeoHyFormer: Geometric Hybrid Transformer for Fake News Detection
 
-GeoHyFormer is a **geometric hybrid transformer model** designed for **fake news detection on social media**, integrating both **geometric representation** and **temporal context** of information propagation.  
-It builds on graph-based message passing and hierarchical time encoding to effectively capture the dynamic behavior of fake news diffusion.
+> **GeoHyFormer** is a geometric hybrid transformer model for **fake news detection on social media**, integrating both **geometric representation** and **temporal context** of information propagation.  
+> The model leverages **graph-based message passing** and **multi-scale time encoding** to capture the dynamic diffusion behavior of misinformation.
 
 ---
 
-## Project Structure
+## 🧩 Project Structure
+
 GeoHyFormer/
 │
 ├── data/
-│   ├── gossipcop/
-│   │   ├── processed/
-│   │   └── raw/
-│   └── politifact/
-│       ├── processed/
-│       └── raw/
+│ ├── gossipcop/
+│ │ ├── processed/
+│ │ └── raw/
+│ └── politifact/
+│ ├── processed/
+│ └── raw/
 │
 └── main/
-    ├── __init__.py
-    ├── evaluate.py
-    ├── load_data.py
-    ├── model.py
-    ├── train.py
-    └── utils.py
+├── evaluate.py
+├── load_data.py
+├── model.py
+├── train.py
+└── utils.py
+
+yaml
+Sao chép mã
 
 ---
 
-## How to Run
+## 🚀 How to Run
 
-### **Training**
+### 🏋️‍♂️ Train the Model
+
 ```bash
-python main/train.py --name politifact(or gossipcop) --root ./data --epochs 50 --batch_size 32
+python main/train.py --name politifact --root ./data --epochs 50 --batch_size 8
+🧪 Evaluate
+bash
+Sao chép mã
+python main/evaluate.py --name politifact --root ./data --ckpt ./data/politifact/processed/patgt_best.pt
+📊 Results
+Dataset	Accuracy (%)	F1-score (%)
+Politifact	84.62	84.65
+GossipCop	97.23	97.22
 
-Evaluation:
-python main/evaluate.py --name politifact --root ./data --ckpt ./data/politifact(or gossipcop)/processed/patgt_best.pt
+GeoHyFormer consistently outperforms baseline models on both datasets.
 
-Datasets
+🧠 Model Overview
+GeoHyFormer introduces a Dual-Hybrid Layer that fuses:
 
-We use benchmark datasets from the FakeNewsNet framework:
+🧩 Geometric message passing for structural dependencies
 
-Politifact
+⏱️ Temporal hybrid attention for multi-scale time encoding
 
-GossipCop
+Architecture pipeline:
 
-Each dataset is organized into:
+pgsql
+Sao chép mã
+Input Graph → Time Encoding → DualHybridStack → Multi-view Pooling → Classification
+<p align="center"> <img src="assets/architecture.png" alt="GeoHyFormer Architecture" width="600"> </p>
+📁 Datasets
+We adopt datasets from the UPFD (User Preference-aware Fake News Detection) benchmark:
 
-raw/ — original post and user data
+Politifact 🗳️
 
-processed/ — graph-structured and preprocessed data used for training
+GossipCop 🎬
 
-Link data: https://drive.google.com/drive/u/0/folders/1FqpR-toGrend7P0280OixS2oNV2oqbjK
+Each dataset includes:
 
-Author
+raw/ — original post and user engagement data
 
-Developed by Thanh Duong Nhat
-GitHub: thanh1374
+processed/ — graph-structured data ready for training
 
+📦 Download link: UPFD Dataset (Google Drive)
 
+⚙️ Requirements
+bash
+Sao chép mã
+pip install torch torch-geometric torch-scatter
+pip install numpy pandas tqdm
+📚 Reference
+csharp
+Sao chép mã
+Federico Monti, Fabrizio Frasca, Davide Eynard, Damon Mannion, and Michael M. Bronstein.  
+Fake news detection on social media using geometric deep learning. ICLR Workshop (2019).
+👨‍💻 Author
+Developed by: Thanh Duong Nhat
+🔗 GitHub: thanh1374
 
