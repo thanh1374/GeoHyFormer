@@ -24,44 +24,30 @@ GeoHyFormer/
     ├── model.py
     ├── train.py
     └── utils.py
+```
+##  How to Run
 
-
-## 🚀 How to Run
-
-### 🏋️‍♂️ Train the Model
+### Train the Model
 
 ```bash
-python main/train.py --name politifact --root ./data --epochs 50 --batch_size 8
-🧪 Evaluate
-bash
-Sao chép mã
-python main/evaluate.py --name politifact --root ./data --ckpt ./data/politifact/processed/patgt_best.pt
-📊 Results
-Dataset	Accuracy (%)	F1-score (%)
-Politifact	84.62	84.65
-GossipCop	97.23	97.22
+python main/train.py --name politifact (or gossipcop) --root ./data --epochs 50 --batch_size 32
+```
+### Evaluate
+```bash
+python main/evaluate.py --name politifact (or gossipcop) --root ./data --ckpt ./data/politifact/processed/patgt_best.pt
+```
+Results
+Dataset	    Accuracy (%)	  F1-score (%)
+Politifact	  89.14	             89.13
+GossipCop	  97.67              97.67
 
 GeoHyFormer consistently outperforms baseline models on both datasets.
+### Datasets
+We adopt datasets from the FakeNewsNet benchmark:
 
-🧠 Model Overview
-GeoHyFormer introduces a Dual-Hybrid Layer that fuses:
+Politifact
 
-🧩 Geometric message passing for structural dependencies
-
-⏱️ Temporal hybrid attention for multi-scale time encoding
-
-Architecture pipeline:
-
-pgsql
-Sao chép mã
-Input Graph → Time Encoding → DualHybridStack → Multi-view Pooling → Classification
-<p align="center"> <img src="assets/architecture.png" alt="GeoHyFormer Architecture" width="600"> </p>
-📁 Datasets
-We adopt datasets from the UPFD (User Preference-aware Fake News Detection) benchmark:
-
-Politifact 🗳️
-
-GossipCop 🎬
+GossipCop
 
 Each dataset includes:
 
@@ -69,19 +55,10 @@ raw/ — original post and user engagement data
 
 processed/ — graph-structured data ready for training
 
-📦 Download link: UPFD Dataset (Google Drive)
-
-⚙️ Requirements
-bash
-Sao chép mã
-pip install torch torch-geometric torch-scatter
-pip install numpy pandas tqdm
-📚 Reference
-csharp
-Sao chép mã
-Federico Monti, Fabrizio Frasca, Davide Eynard, Damon Mannion, and Michael M. Bronstein.  
-Fake news detection on social media using geometric deep learning. ICLR Workshop (2019).
-👨‍💻 Author
+Download link (Google Drive):
+```bash
+https://drive.google.com/drive/u/0/folders/1FqpR-toGrend7P0280OixS2oNV2oqbjK
+```
 Developed by: Thanh Duong Nhat
 🔗 GitHub: thanh1374
 
