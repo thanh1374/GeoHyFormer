@@ -37,9 +37,10 @@ python main/train.py --name politifact (or gossipcop) --root ./data --epochs 50 
 python main/evaluate.py --name politifact (or gossipcop) --root ./data --ckpt ./data/politifact/processed/patgt_best.pt
 ```
 Results
-Dataset	    Accuracy (%)	  F1-score (%)
-Politifact	  89.14	             89.13
-GossipCop	  97.67              97.67
+| Dataset | Accuracy (%) | F1-score (%) |
+|-------|-------|-------|
+| Politifact | 89.14 | 89.13 |
+| GossipCop | 97.67 | 97.67 |
 
 GeoHyFormer consistently outperforms baseline models on both datasets.
 ### Datasets
