@@ -7,27 +7,24 @@
 
 ## 🧩 Project Structure
 
+```yaml
 GeoHyFormer/
 │
 ├── data/
-│ ├── gossipcop/
-│ │ ├── processed/
-│ │ └── raw/
-│ └── politifact/
-│ ├── processed/
-│ └── raw/
+│   ├── gossipcop/
+│   │   ├── processed/
+│   │   └── raw/
+│   └── politifact/
+│       ├── processed/
+│       └── raw/
 │
 └── main/
-├── evaluate.py
-├── load_data.py
-├── model.py
-├── train.py
-└── utils.py
+    ├── evaluate.py
+    ├── load_data.py
+    ├── model.py
+    ├── train.py
+    └── utils.py
 
-yaml
-Sao chép mã
-
----
 
 ## 🚀 How to Run
 
