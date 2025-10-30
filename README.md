@@ -1,11 +1,11 @@
-# 🌐 GeoHyFormer: Geometric Hybrid Transformer for Fake News Detection
+# GeoHyFormer: Geometric Hybrid Transformer for Fake News Detection
 
 > **GeoHyFormer** is a geometric hybrid transformer model for **fake news detection on social media**, integrating both **geometric representation** and **temporal context** of information propagation.  
 > The model leverages **graph-based message passing** and **multi-scale time encoding** to capture the dynamic diffusion behavior of misinformation.
 
 ---
 
-## 🧩 Project Structure
+## Project Structure
 
 ```yaml
 GeoHyFormer/
